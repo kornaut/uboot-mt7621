@@ -115,7 +115,7 @@ if [ "$9" = '57600' ]; then
 else
 	echo "CONFIG_BAUDRATE=115200" >> ${DEFCONFIG}
 fi
-
+echo "CONFIG_SYS_BOOTM_LEN=0x2000000" >> ${DEFCONFIG}
 make mt7621_build_defconfig
 make CROSS_COMPILE=${Toolchain} STAGING_DIR=${Staging}
 make savedefconfig
